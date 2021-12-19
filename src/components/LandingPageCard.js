@@ -34,7 +34,7 @@ const LandingPageCard = () => {
           <Container className="landing-page-card" key={card.id}>
             <Container>
               <h2>{card.frontmatter.title}</h2>
-              <p dangerouslySetInnerHTML={{ __html: card.html }} />
+              <div dangerouslySetInnerHTML={{ __html: card.html }} />
             </Container>
 
             <GatsbyImage
