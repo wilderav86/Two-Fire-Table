@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+} */
+
+.app-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Loading Screen */
+
+.loading-screen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  min-height: 100%;
+  background-color: #4d577a;
+}
+
+.loading-screen-img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  opacity: 1;
+  animation: fade 3s linear;
+  animation-iteration-count: infinite, 1;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Header */
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 5%;
+  width: 100%;
+  background-color: #e8533f;
+  overflow: hidden;
+  border-bottom: 4px solid #1b4f64;
+}
+
+.header-logo {
+  height: 140px;
+  margin-top: -40px;
+  margin-bottom: -40px;
+}
+
+/* Nav */
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+  height: 100%;
+}
+
+/* INDEX */
+
+.background-image {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LANDING PAGE CARD */
+
+/* .landing-page-card {
+  display: flex;
+} */
