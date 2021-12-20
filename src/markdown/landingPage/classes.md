@@ -1,7 +1,9 @@
 ---
-title: Cooking Classes
+title: Learn From Us
 image: "../../images/greens.jpg"
-slug: classes
+button: Inquire
+slug: /contact
+order: 3
 ---
 
 #### Learn From Us with a link to contact form page

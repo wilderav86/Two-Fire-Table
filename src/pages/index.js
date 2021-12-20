@@ -7,20 +7,20 @@ import { Container } from "react-bootstrap";
 //import LoadingScreen from "../components/LoadingScreen";
 
 //import Header from "../components/Header";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";
 import LandingPageCard from "../components/LandingPageCard";
 import LandingBackground from "../components/BackgroundImage";
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   return (
     <div className="app-container">
       <Layout>
         <LandingBackground />
-        <Container>
-          <h1>CONTENT</h1>
+
+        <Container className="content">
+          <LandingPageCard />
         </Container>
-        <LandingPageCard />
       </Layout>
     </div>
   );

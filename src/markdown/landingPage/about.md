@@ -1,7 +1,9 @@
 ---
 title: Who We Are
-image: "../../images/fourchickens.jpg"
-slug: about
+image: "../../images/tomatosarah.jpg"
+button: Meet Us
+slug: /about
+order: 1
 ---
 
 #### This is your intro with a link to your main about us section

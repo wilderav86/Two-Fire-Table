@@ -8,13 +8,8 @@
 body,
 #___gatsby,
 #gatsby-focus-wrapper {
-  height: 100%;
+  display: flex;
 } */
-
-.app-container {
-  height: 100%;
-  width: 100%;
-}
 
 /* Loading Screen */
 
@@ -77,16 +72,142 @@ body,
 
 /* INDEX */
 
-.background-image {
+.app-container {
+  /* height: 100%;
+  width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-around;
+  background-color: #c5c9d8;
+  z-index: -2;
+}
+
+.content {
   width: 100%;
-  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-top: 75px;
+}
+
+/* LANDING BACKGROUND */
+
+.background-image {
+  position: relative;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 90vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  z-index: 1;
+}
+
+.background-banner {
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 120px;
+  font-size: 10vw;
+  color: #ffffff;
+  z-index: 2;
 }
 
 /* LANDING PAGE CARD */
 
-/* .landing-page-card {
+/* .landing-page-card.container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 } */
+
+.landing-page-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.landing-page-card-image {
+  border-radius: 10px;
+}
+
+.landing-page-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  margin: 15px;
+}
+
+.landing-page-card-title,
+.landing-page-card-body,
+.landing-page-card-button {
+  text-align: center;
+}
+
+.landing-page-card-title {
+  margin-bottom: 80px;
+}
+
+.desktop-title {
+  visibility: hidden;
+}
+
+.divider {
+  position: relative;
+  width: 80%;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  height: 1px;
+  z-index: 1;
+}
+
+.div-transparent:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgb(48, 49, 51),
+    transparent
+  );
+}
+
+@media (min-width: 800px) {
+  .background-banner {
+    margin-top: 200px;
+  }
+
+  .landing-page-card {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  #card1 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .landing-page-card-text {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  .mobile-title {
+    visibility: hidden;
+  }
+  .desktop-title {
+    visibility: visible;
+  }
+}

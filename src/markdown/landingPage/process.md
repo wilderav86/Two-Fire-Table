@@ -1,7 +1,9 @@
 ---
 title: What We Do
 image: "../../images/peppers.jpg"
-slug: process
+button: See Our Sample Menus
+slug: /menu
+order: 2
 ---
 
 #### Our Process with a link to a sample menu

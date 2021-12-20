@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import { getImage, StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
 import { convertToBgImage } from "gbimage-bridge";
 
@@ -25,7 +25,9 @@ const LandingBackground = () => {
       {...backgroundImage}
       preserveStackingContext
     >
-      <div className="background-banner">test</div>
+      <div className="background-banner">
+        <StaticImage src="../images/background/tftlogowhite.png" alt="logo" />
+      </div>
     </BackgroundImage>
   );
 };

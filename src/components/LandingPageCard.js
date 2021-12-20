@@ -1,19 +1,21 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import { Container } from "react-bootstrap";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery, Link } from "gatsby";
+import { Container, Button } from "react-bootstrap";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const LandingPageCard = () => {
   const data = useStaticQuery(graphql`
     query LandingPageCardData {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___order }) {
         nodes {
           frontmatter {
+            button
             image {
               childImageSharp {
-                gatsbyImageData(width: 800)
+                gatsbyImageData(width: 1000)
               }
             }
+            slug
             title
           }
           html
@@ -27,24 +29,52 @@ const LandingPageCard = () => {
 
   console.log(nodes);
   return (
-    <div>
-      {nodes.map((card) => {
-        console.log(card);
+    <>
+      {nodes.map((card, id) => {
+        console.log("card" + id);
         return (
-          <Container className="landing-page-card" key={card.id}>
-            <Container>
-              <h2>{card.frontmatter.title}</h2>
-              <div dangerouslySetInnerHTML={{ __html: card.html }} />
-            </Container>
+          <>
+            <Container
+              className="landing-page-card"
+              id={"card" + id}
+              key={card.id}
+            >
+              <div className="mobile-title">
+                <h2 className="landing-page-card-title">
+                  {card.frontmatter.title}
+                </h2>
+              </div>
+              <div>
+                <GatsbyImage
+                  className="landing-page-card-image"
+                  image={card.frontmatter.image.childImageSharp.gatsbyImageData}
+                  alt={card.frontmatter.title}
+                />
+              </div>
 
-            <GatsbyImage
-              image={card.frontmatter.image.childImageSharp.gatsbyImageData}
-              alt={card.frontmatter.title}
-            />
-          </Container>
+              <div className="landing-page-card-text">
+                {" "}
+                <div className="desktop-title">
+                  <h2 className="landing-page-card-title">
+                    {card.frontmatter.title}
+                  </h2>
+                </div>
+                <div
+                  className="landing-page-card-body"
+                  dangerouslySetInnerHTML={{ __html: card.html }}
+                />
+                <div className="landing-page-card-button">
+                  <Link to={card.frontmatter.slug}>
+                    <Button>{card.frontmatter.button}</Button>
+                  </Link>
+                </div>
+              </div>
+            </Container>
+            <div className="divider div-transparent" key={id}></div>
+          </>
         );
       })}
-    </div>
+    </>
   );
 };
 
