@@ -44,16 +44,14 @@ const LandingPageCard = () => {
                   {card.frontmatter.title}
                 </h2>
               </div>
-              <div>
-                <GatsbyImage
-                  className="landing-page-card-image"
-                  image={card.frontmatter.image.childImageSharp.gatsbyImageData}
-                  alt={card.frontmatter.title}
-                />
-              </div>
+
+              <GatsbyImage
+                className="landing-page-card-image"
+                image={card.frontmatter.image.childImageSharp.gatsbyImageData}
+                alt={card.frontmatter.title}
+              />
 
               <div className="landing-page-card-text">
-                {" "}
                 <div className="desktop-title">
                   <h2 className="landing-page-card-title">
                     {card.frontmatter.title}

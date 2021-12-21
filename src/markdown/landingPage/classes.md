@@ -1,7 +1,7 @@
 ---
 title: Learn From Us
 image: "../../images/greens.jpg"
-button: Inquire
+button: Inquire About Open Fire Cooking Classes
 slug: /contact
 order: 3
 ---

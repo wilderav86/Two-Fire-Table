@@ -130,6 +130,11 @@ body,
   align-content: center;
 }
 
+.landing-page-card-text h4,
+p {
+  margin: 50px;
+}
+
 .landing-page-card-image {
   border-radius: 10px;
 }
@@ -140,6 +145,7 @@ body,
   justify-content: space-around;
   align-content: center;
   margin: 15px;
+  margin-top: -50px;
 }
 
 .landing-page-card-title,
@@ -183,12 +189,26 @@ body,
 
 @media (min-width: 800px) {
   .background-banner {
-    margin-top: 200px;
+    margin-top: 20vh;
   }
 
   .landing-page-card {
     display: flex;
     flex-direction: row-reverse;
+  }
+
+  .landing-page-card-image.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .landing-page-card-body p {
+    margin: 15px;
+  }
+
+  .landing-page-card-image {
+    align-self: center;
   }
 
   #card1 {
