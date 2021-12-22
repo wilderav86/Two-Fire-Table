@@ -187,10 +187,34 @@ p {
   );
 }
 
+/* ABOUT PAGE */
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.about-header {
+  text-align: center;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
 @media (min-width: 800px) {
+  /* LANDING BACKGROUND Desktop*/
+
   .background-banner {
     margin-top: 20vh;
   }
+
+  /* LANDING PAGE Desktop*/
 
   .landing-page-card {
     display: flex;
@@ -229,5 +253,11 @@ p {
   }
   .desktop-title {
     visibility: visible;
+  }
+
+  /* ABOUT PAGE desktop */
+
+  .about-container {
+    flex-direction: row;
   }
 }

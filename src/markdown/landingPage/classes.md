@@ -3,6 +3,7 @@ title: Learn From Us
 image: "../../images/greens.jpg"
 button: Inquire About Open Fire Cooking Classes
 slug: /contact
+section: landingpage
 order: 3
 ---
 

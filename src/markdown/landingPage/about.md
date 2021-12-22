@@ -3,6 +3,7 @@ title: Who We Are
 image: "../../images/tomatosarah.jpg"
 button: Meet Us
 slug: /about
+section: landingpage
 order: 1
 ---
 

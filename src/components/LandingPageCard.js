@@ -6,7 +6,10 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const LandingPageCard = () => {
   const data = useStaticQuery(graphql`
     query LandingPageCardData {
-      allMarkdownRemark(sort: { fields: frontmatter___order }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { section: { eq: "landingpage" } } }
+        sort: { fields: frontmatter___order }
+      ) {
         nodes {
           frontmatter {
             button
@@ -17,6 +20,7 @@ const LandingPageCard = () => {
             }
             slug
             title
+            section
           }
           html
           id

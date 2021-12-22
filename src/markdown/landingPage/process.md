@@ -3,6 +3,7 @@ title: What We Do
 image: "../../images/peppers.jpg"
 button: See Our Sample Menus
 slug: /menu
+section: landingpage
 order: 2
 ---
 
