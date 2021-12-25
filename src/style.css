@@ -42,6 +42,13 @@ body,
   }
 }
 
+/* LAYOUT */
+
+.motion-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Header */
 
 .header-container {
@@ -205,6 +212,12 @@ p {
   display: flex;
   flex-direction: column;
   align-content: space-around;
+}
+
+/* GALLERY PAGE */
+
+.gallery-container {
+  background-color: rgba(82, 87, 104, 0.815);
 }
 
 @media (min-width: 800px) {

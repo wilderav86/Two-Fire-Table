@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { Container, Button } from "react-bootstrap";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { motion } from "framer-motion";
 
 const LandingPageCard = () => {
   const data = useStaticQuery(graphql`
@@ -67,7 +68,13 @@ const LandingPageCard = () => {
                 />
                 <div className="landing-page-card-button">
                   <Link to={card.frontmatter.slug}>
-                    <Button>{card.frontmatter.button}</Button>
+                    <Button
+                      as={motion.button}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      {card.frontmatter.button}
+                    </Button>
                   </Link>
                 </div>
               </div>
