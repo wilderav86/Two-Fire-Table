@@ -10,15 +10,15 @@ const Gallery = ({ data }) => {
   return (
     <Layout>
       <div className="gallery-container">
-        <h1>Gallery</h1>
         <Carousel>
           {edges.map((image) => {
             console.log(image);
             return (
-              <Carousel.Item>
+              <Carousel.Item align="center" key={image.node.childImageSharp.id}>
                 {
                   <GatsbyImage
                     image={image.node.childImageSharp.gatsbyImageData}
+                    alt="carousel image"
                   />
                 }
               </Carousel.Item>
@@ -38,7 +38,12 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(
+              width: 800
+              height: 800
+              transformOptions: { cropFocus: CENTER }
+            )
+            id
           }
         }
       }

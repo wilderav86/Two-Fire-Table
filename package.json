@@ -20,6 +20,7 @@
     "framer-motion": "^5.5.5",
     "gatsby": "^4.3.0",
     "gatsby-background-image": "^1.5.3",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.4.0",
     "gatsby-plugin-netlify-cms": "^6.3.0",
     "gatsby-plugin-sharp": "^4.4.0",
@@ -32,6 +33,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^2.0.3",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-intersection-observer": "^8.33.1"
   }
 }

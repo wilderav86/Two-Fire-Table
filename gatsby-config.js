@@ -30,6 +30,14 @@ module.exports = {
     `gatsby-remark-images`,
 
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Amatic SC`, "Oswald", "medium 500"],
+        display: "swap",
+      },
+    },
+
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

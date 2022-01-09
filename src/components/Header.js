@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { motion } from "framer-motion";
 import headerLogo from "../images/headerlogo.jpg";
 // import Nav from "./Nav";
 
@@ -20,12 +21,22 @@ const Header = () => {
 
   const { menupageLinks } = data.site.siteMetadata;
 
+  // conditionally render button animations depending on if mobile or desktop
+
   return (
     <header className="header-container">
       <Container>
         <Navbar expand="md" bg="#e8533f" variant="dark">
           <Navbar.Brand href="/">
-            <img className="header-logo" src={headerLogo} alt="header logo" />
+            <motion.img
+              className="header-logo"
+              src={headerLogo}
+              alt="header logo"
+              whileHover={{
+                scale: 1.2,
+                transition: { duration: 0.2 },
+              }}
+            />
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="navbarResponsive"
