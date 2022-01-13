@@ -83,8 +83,8 @@ body,
 }
 
 .nav-item {
-  font-family: "Amatic SC", bold;
-  font-size: 2rem;
+  font-family: "montserrat";
+  font-size: 1.2rem;
 }
 
 /* INDEX */
@@ -100,14 +100,16 @@ body,
   z-index: -2;
 }
 
-.content.container {
+.content {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-
   border-style: double;
+  /* border-right: double;
+  border-left: double; */
+  position: relative;
 }
 
 /* LANDING BACKGROUND */
@@ -146,18 +148,21 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-content: space-between;
 }
 
 .landing-page-card-title {
+  font-family: "montserrat";
+
   margin-top: 40px;
   margin-bottom: 40px;
-  font-size: 3.6rem;
+  font-size: 2rem;
 }
 
 .landing-page-card-text h4,
 p {
   font-size: 1.8rem;
+  font-weight: 200;
 }
 
 .landing-page-card-image {
@@ -172,7 +177,7 @@ p {
   align-content: center;
   margin: 15px;
 
-  margin-top: -120px;
+  margin-top: -100px;
 }
 
 .landing-page-card-title,
@@ -233,12 +238,18 @@ p {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  background-color: #4d577a;
-  color: white;
+  background-color: #cec7ab;
+  color: #1f354a;
 }
 
 .about-header {
+  font-family: "montserrat";
   text-align: center;
+  margin: 30px;
+}
+
+.about-title {
+  font-family: "montserrat";
 }
 
 .about-card {
@@ -254,7 +265,7 @@ p {
 /* GALLERY PAGE */
 
 .gallery-container {
-  background-color: rgb(0, 0, 0);
+  background-color: #dfddd1;
   display: flex;
   flex-direction: column;
 }
@@ -272,15 +283,19 @@ p {
 
   /* LANDING PAGE Desktop*/
 
-  .landing-page-card.container {
+  .landing-page-card {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: space-around;
     /* height: 90vh; */
   }
 
-  .landing-page-card-image.container {
+  .landing-page-card-title {
+    font-size: 2.7rem;
+  }
+
+  .landing-page-card-image {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -292,6 +307,7 @@ p {
 
   .landing-page-card-image {
     align-self: center;
+    justify-self: flex-start;
   }
 
   #card1 {
@@ -311,6 +327,8 @@ p {
 
   .mobile-title {
     visibility: hidden;
+    z-index: -5;
+    position: absolute;
   }
   .desktop-title {
     visibility: visible;
@@ -320,7 +338,21 @@ p {
 
   .about-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .about-card-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .about-card {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    justify-content: flex-start;
+    margin: 35px;
   }
 }

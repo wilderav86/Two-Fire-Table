@@ -1,7 +1,7 @@
 ---
-title: Learn From Us
+title: OPEN FIRE COOKING CLASSES
 image: "../../images/greens.jpg"
-button: Inquire About Open Fire Cooking Classes
+button: Inquire About Classes
 slug: /contact
 section: landingpage
 order: 3

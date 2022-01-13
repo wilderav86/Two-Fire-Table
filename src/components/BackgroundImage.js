@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage, StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
 import { convertToBgImage } from "gbimage-bridge";
-import FadeInWhenVisible from "../animations/FadeInWhenVisible";
+import { motion } from "framer-motion";
 
 const LandingBackground = () => {
   const { bgImage } = useStaticQuery(graphql`
@@ -19,22 +19,36 @@ const LandingBackground = () => {
   const image = getImage(bgImage);
   const backgroundImage = convertToBgImage(image);
 
+  //background parallax effect.
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <BackgroundImage
       className="background-image"
       Tag="section"
       {...backgroundImage}
-      preserveStackingContext
+      // preserveStackingContext
+      style={{ transform: `translateY(${offsetY * -0.4}px)` }}
     >
-      <FadeInWhenVisible>
-        <div className="background-banner">
-          <StaticImage
-            src="../images/background/tftlogowhite.png"
-            alt="logo"
-            placeholder="blurred"
-          />
-        </div>
-      </FadeInWhenVisible>
+      <motion.div
+        className="background-banner"
+        initial={{ opacity: 0 }}
+        transition={{ delay: 0.6, duration: 1, ease: "easeIn" }}
+        animate={{ opacity: 1 }}
+      >
+        <StaticImage
+          src="../images/background/tftlogowhite.png"
+          alt="logo"
+          placeholder="blurred"
+        />
+      </motion.div>
     </BackgroundImage>
   );
 };

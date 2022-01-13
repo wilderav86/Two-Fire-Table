@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { Container } from "react-bootstrap";
 import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import LandingBackground from "../components/BackgroundImage";
 
 const About = ({ data }) => {
   // console.log(data);
@@ -11,26 +12,34 @@ const About = ({ data }) => {
 
   return (
     <Layout>
-      <h1 className="about-header">ABOUT US</h1>
-      <Container className="about-container">
-        {nodes.map((card, id) => {
-          const { title } = card.frontmatter;
-          return (
-            <div className="about-card">
-              <h2 className="about-title">{title}</h2>
-              <GatsbyImage
-                className="about-image"
-                image={card.frontmatter.image.childImageSharp.gatsbyImageData}
-                alt={title}
-              />
-              <div
-                className="about-body"
-                dangerouslySetInnerHTML={{ __html: card.html }}
-              />
-            </div>
-          );
-        })}
-      </Container>
+      <div className="about-container">
+        <Container className="about-header-container">
+          <h1 className="about-header">A LITTLE ABOUT US</h1>
+        </Container>
+        <Container className="about-card-container">
+          {nodes.map((card, id) => {
+            const { title } = card.frontmatter;
+            return (
+              <div className="about-card" key={`card${id}`}>
+                <h2 className="about-title" key={`title${id}`}>
+                  {title}
+                </h2>
+                <GatsbyImage
+                  className="about-image"
+                  image={card.frontmatter.image.childImageSharp.gatsbyImageData}
+                  alt={title}
+                  key={`image${id}`}
+                />
+                <div
+                  className="about-body"
+                  dangerouslySetInnerHTML={{ __html: card.html }}
+                  key={`body${id}`}
+                />
+              </div>
+            );
+          })}
+        </Container>
+      </div>
     </Layout>
   );
 };
@@ -39,11 +48,15 @@ export default About;
 
 export const query = graphql`
   query AboutPageData {
-    allMarkdownRemark(filter: { frontmatter: { section: { eq: "about" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { section: { eq: "about" } } }
+      sort: { fields: frontmatter___order }
+    ) {
       nodes {
         frontmatter {
           title
           section
+          order
           image {
             childImageSharp {
               gatsbyImageData(height: 700)

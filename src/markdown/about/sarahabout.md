@@ -2,6 +2,7 @@
 title: Sarah
 image: "../../images/sarahabout.jpg"
 section: about
+order: 1
 ---
 
 A Southern Appalachian native, Sarah Rennie began her love of cooking with fire in a wood-fired bakery in Asheville, NC. It was there that she learned the importance of seasonal cooking and supporting local farms.

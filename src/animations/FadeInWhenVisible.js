@@ -10,9 +10,9 @@ const FadeInWhenVisible = ({ children }) => {
     if (inView) {
       controls.start("visible");
     }
-    if (!inView) {
-      controls.start("hidden");
-    }
+    // if (!inView) {
+    //   controls.start("hidden");
+    // }
   }, [controls, inView]);
 
   return (
@@ -22,8 +22,10 @@ const FadeInWhenVisible = ({ children }) => {
       initial="hidden"
       transition={{ duration: 0.6 }}
       variants={{
-        visible: { opacity: 1, scale: 1 },
-        hidden: { opacity: 0, scale: 0 },
+        visible: { y: 20 },
+        hidden: {
+          y: 500,
+        },
       }}
     >
       {children}

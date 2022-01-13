@@ -1,5 +1,5 @@
 ---
-title: What We Do
+title: WHAT WE DO
 image: "../../images/peppers.jpg"
 button: See Our Sample Menus
 slug: /menu

@@ -1,5 +1,5 @@
 ---
-title: Who We Are
+title: WHO WE ARE
 image: "../../images/tomatosarah.jpg"
 button: Meet Us
 slug: /about
