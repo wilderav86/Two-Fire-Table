@@ -3,10 +3,16 @@ import Layout from "../components/Layout";
 import Form from "react-bootstrap/Form";
 import { Container, Button } from "react-bootstrap";
 
+// todo: add form control for phone number validation
+
 const Contact = () => {
   return (
     <Layout>
       <Container className="contact-container">
+        <h2 className="contact-header">
+          Plan your next event with us or inquire about open fire cooking
+          classes.
+        </h2>
         <Form
           name="contact"
           method="POST"
@@ -17,6 +23,13 @@ const Contact = () => {
           <input type="hidden" name="form-name" value="contact" />
           <Form.Group required className="mb-3" controlId="formName">
             <Form.Control type="name" placeholder="Name" name="name" />
+          </Form.Group>
+          <Form.Group required className="mb-3" controlId="formPhoneNumber">
+            <Form.Control
+              type="phone"
+              placeholder="Phone Number"
+              name="phone number"
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control

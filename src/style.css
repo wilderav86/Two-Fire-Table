@@ -274,6 +274,23 @@ p {
   height: 90vh;
 }
 
+/* CONTACT PAGE */
+
+.contact-container {
+  background-color: #4d577a;
+  height: 88vh;
+}
+
+.contact-header {
+  font-family: "Oswald";
+  font-weight: 200;
+  color: #dfddd1;
+  margin: 20px;
+  text-align: center;
+}
+
+/* ///////////////////////////////////DESKTOP STYLING////////////////////////////////////// */
+
 @media (min-width: 800px) {
   /* LANDING BACKGROUND Desktop*/
 
