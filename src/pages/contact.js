@@ -7,7 +7,13 @@ const Contact = () => {
   return (
     <Layout>
       <Container className="contact-container">
-        <Form name="contact" method="post" data-netlfy="true" onSubmit="submit">
+        <Form
+          name="contact"
+          method="post"
+          data-netlfy="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit="submit"
+        >
           <input type="hidden" name="form-name" value="contact" />
           <Form.Group required className="mb-3" controlId="formName">
             <Form.Control type="name" placeholder="Name" />
