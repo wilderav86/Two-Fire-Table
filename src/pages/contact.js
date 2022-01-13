@@ -9,8 +9,8 @@ const Contact = () => {
       <Container className="contact-container">
         <Form
           name="contact"
-          method="post"
-          data-netlfy="true"
+          method="POST"
+          data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit="submit"
         >
