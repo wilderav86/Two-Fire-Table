@@ -9,6 +9,10 @@ body {
   color: #3f455d;
 }
 
+#gatsby-focus-wrapper {
+  position: relative;
+}
+
 /* html,
 body,
 #___gatsby,
@@ -52,6 +56,8 @@ body,
 .motion-wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 100;
 }
 
 /* Header */
@@ -60,11 +66,12 @@ body,
   display: flex;
   justify-content: space-between;
   align-content: center;
-  height: 5%;
   width: 100%;
   background-color: #e8533f;
   overflow: hidden;
   border-bottom: 4px solid #1b4f64;
+  z-index: 5;
+  top: 0;
 }
 
 .header-logo {
@@ -76,10 +83,13 @@ body,
 /* Nav */
 
 .nav-container {
+  position: absolute;
   display: flex;
   align-items: center;
   margin-right: 2em;
-  height: 100%;
+  z-index: 100;
+
+  /* height: 100%; */
 }
 
 .nav-item {
@@ -94,55 +104,71 @@ body,
   width: 100%; */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-content: space-around;
+
+  /* justify-content: space-around;
+  align-content: space-around; */
   background-color: #dfddd1;
-  z-index: -2;
+  border-style: double;
+  /* position: absolute; */
+  z-index: -1;
 }
 
 .content {
   width: 100%;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   border-style: double;
+  /* position: absolute; */
+  top: 100vh;
   /* border-right: double;
   border-left: double; */
-  position: relative;
+
+  z-index: 5;
 }
 
 /* LANDING BACKGROUND */
 
+.background-container {
+  /* display: flex; */
+}
+
 .background-image {
-  position: relative;
-  background-attachment: fixed;
+  /* position: absolute; */
+  /* background-attachment: fixed; */
   width: 100%;
-  min-height: 90vh;
-  /* display: flex;
+  /* height: 75%; */
+  min-height: 100vh;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
   z-index: 1;
 }
 
 .background-banner {
-  position: relative;
+  position: absolute;
   display: flex;
-  justify-content: center;
-  margin-top: 120px;
+  justify-self: center;
+  align-self: center;
+  margin-top: 40vh;
+  top: 0;
   font-size: 10vw;
   color: #ffffff;
   z-index: 2;
 }
 
+.parallax-outer.custom-class {
+  margin: 0;
+  overflow: hidden;
+}
+
 /* LANDING PAGE CARD */
 
-/* .landing-page-card.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-} */
+.landing-page-card.container {
+  position: relative;
+}
 
 .landing-page-card {
   display: flex;
@@ -206,8 +232,8 @@ p {
 .divider {
   position: relative;
   width: 80%;
-  margin-top: 90px;
-  margin-bottom: 90px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   margin-right: auto;
   margin-left: auto;
   height: 1px;
@@ -277,15 +303,17 @@ p {
 /* CONTACT PAGE */
 
 .contact-container {
+  display: flex;
+  flex-direction: column;
   background-color: #4d577a;
-  height: 88vh;
+  height: 100vh;
 }
 
 .contact-header {
   font-family: "Oswald";
   font-weight: 200;
   color: #dfddd1;
-  margin: 20px;
+  margin: 30px;
   text-align: center;
 }
 
@@ -295,7 +323,8 @@ p {
   /* LANDING BACKGROUND Desktop*/
 
   .background-banner {
-    margin-top: 20vh;
+    /* margin-top: 20vh; */
+    left: 25%;
   }
 
   /* LANDING PAGE Desktop*/
@@ -303,8 +332,9 @@ p {
   .landing-page-card {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: space-around;
+    padding: 30px;
+    /* justify-content: space-between;
+    align-items: space-around; */
     /* height: 90vh; */
   }
 
@@ -349,6 +379,11 @@ p {
   }
   .desktop-title {
     visibility: visible;
+  }
+
+  .divider {
+    margin-top: 90px;
+    margin-bottom: 90px;
   }
 
   /* ABOUT PAGE desktop */

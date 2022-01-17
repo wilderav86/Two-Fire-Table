@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <motion.main
+      {/* <motion.main
         className="motion-wrapper"
         initial={{ opacity: 0, x: -200 }}
         animate={{ opacity: 1, x: 0 }}
@@ -19,9 +19,9 @@ const Layout = ({ children }) => {
           stiffness: 75,
           duration: 0.3,
         }}
-      >
-        {children}
-      </motion.main>
+      > */}
+      {children}
+      {/* </motion.main> */}
     </>
   );
 };

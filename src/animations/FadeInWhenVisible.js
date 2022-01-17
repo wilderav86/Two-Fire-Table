@@ -22,9 +22,10 @@ const FadeInWhenVisible = ({ children }) => {
       initial="hidden"
       transition={{ duration: 0.6 }}
       variants={{
-        visible: { y: 20 },
+        visible: { opacity: 1, y: 0 },
         hidden: {
-          y: 500,
+          opacity: 0,
+          y: 200,
         },
       }}
     >

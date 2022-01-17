@@ -4,6 +4,7 @@ import { getImage, StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
 import { convertToBgImage } from "gbimage-bridge";
 import { motion } from "framer-motion";
+import { Parallax } from "react-scroll-parallax";
 
 const LandingBackground = () => {
   const { bgImage } = useStaticQuery(graphql`
@@ -20,23 +21,17 @@ const LandingBackground = () => {
   const backgroundImage = convertToBgImage(image);
 
   //background parallax effect.
-  const [offsetY, setOffsetY] = useState(0);
-  const handleScroll = () => setOffsetY(window.pageYOffset);
+  // const [offsetY, setOffsetY] = useState(0);
+  // const handleScroll = () => setOffsetY(window.pageYOffset);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
-    <BackgroundImage
-      className="background-image"
-      Tag="section"
-      {...backgroundImage}
-      // preserveStackingContext
-      style={{ transform: `translateY(${offsetY * -0.4}px)` }}
-    >
+    <div className="background-container">
       <motion.div
         className="background-banner"
         initial={{ opacity: 0 }}
@@ -49,7 +44,16 @@ const LandingBackground = () => {
           placeholder="blurred"
         />
       </motion.div>
-    </BackgroundImage>
+      <Parallax className="custom-class" y={[-50, 50]} tagOuter="figure">
+        <BackgroundImage
+          className="background-image"
+          Tag="section"
+          {...backgroundImage}
+          preserveStackingContext
+          // style={{ transform: `translateY(${offsetY * -0.4}px)` }}
+        ></BackgroundImage>
+      </Parallax>
+    </div>
   );
 };
 
