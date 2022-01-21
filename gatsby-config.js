@@ -1,7 +1,12 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "TwoFireTable",
+    title: "Two-Fire-Table",
+    description:
+      "A website for Two Fire Table built with Gatsby. Two Fire Table seeks to thoughtfully prepare over-the-fire dining experiences that spark profound connections with one another through community and food.",
+    proprietor: "Sarah Rennie",
+    instagramHandle: "@twofiretable",
+    author: "Adam Wilder",
     menupageLinks: [
       {
         pageName: "About Us",
@@ -24,6 +29,7 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

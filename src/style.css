@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#___gatsby {
+  height: 100%;
+  min-height: 100%;
+}
+
 body {
   font-family: "Oswald";
   color: #3f455d;
@@ -11,6 +18,7 @@ body {
 
 #gatsby-focus-wrapper {
   position: relative;
+  height: 100%;
 }
 
 /* html,
@@ -150,10 +158,13 @@ body,
 
 .background-banner {
   position: absolute;
-  display: flex;
-  justify-self: center;
-  align-self: center;
+  width: 80%;
   margin-top: 40vh;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
   top: 0;
   font-size: 10vw;
   color: #ffffff;
@@ -292,47 +303,115 @@ p {
 }
 
 /* GALLERY PAGE */
+.gallery-page-container {
+  display: flex;
+  background-color: #dfddd1;
+  min-height: 100vh;
+  width: 100%;
+  align-items: center;
+}
 
 .gallery-container {
   background-color: #dfddd1;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 80px;
+  /* background-color: #dfddd1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 80px;
-}
-
-.carousel-item {
-  height: 90vh;
+  top: 80px; */
 }
 
 /* CONTACT PAGE */
 
-.contact-container {
+.contact-page-container {
   display: flex;
   position: relative;
   flex-direction: column;
-  background-color: #4d577a;
+  min-height: 100%;
+  top: 81px;
+  background-color: #eee8e8;
+  /* height: 100vh; */
+
+  /* display: flex;
+  position: relative;
   top: 80px;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background-color: #cec7ab;
+  color: #1f354a; */
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }
 
 .contact-header {
   font-family: "Oswald";
   font-weight: 200;
-  color: #dfddd1;
+  color: #4d577a;
   margin: 30px;
   text-align: center;
 }
 
+.form-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-form-button {
+  justify-self: center;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee8e8;
+  width: 98%;
+  /* height: fit-content; */
+}
+
+.contact-us-container {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  width: 80vw;
+  text-align: center;
+  margin-top: 40px;
+}
+
 /* ///////////////////////////////////DESKTOP STYLING////////////////////////////////////// */
-
-@media (min-width: 800px) {
-  /* LANDING BACKGROUND Desktop*/
-
-  .background-banner {
-    /* margin-top: 20vh; */
-    left: 25%;
+@media screen and (max-width: 800px) {
+  .contact-content {
+    flex-direction: column;
   }
+}
+
+@media screen and (min-width: 1200px) {
+  .contact-content {
+    margin-right: 15vh;
+    margin-left: 15vh;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  /* LANDING BACKGROUND Desktop*/
 
   /* LANDING PAGE Desktop*/
 
@@ -414,10 +493,29 @@ p {
     justify-content: flex-start;
     margin: 35px;
   }
+
+  .form-container {
+    margin: 25px;
+  }
+
+  /* CONTACT PAGE desktop */
+
+  /* .contact-page-container {
+    width: 100%;
+    height: 100vh;
+  } */
+
+  .contact-header {
+    margin-top: 100px;
+  }
+
+  .contact-us-container {
+    width: 40vw;
+    transform: translateY(-15%);
+  }
 }
 
-/* CONTACT PAGE desktop */
+/* ///////////////////////////////////WIDE SCREEN STYLING////////////////////////////////////// */
 
-.contact-container {
-  width: 100%;
+@media (min-width: 1300px) {
 }
