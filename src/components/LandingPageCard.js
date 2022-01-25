@@ -38,55 +38,64 @@ const LandingPageCard = () => {
     <>
       {nodes.map((card, id) => {
         return (
-          <>
-            <FadeInWhenVisible>
-              <Container
-                className="landing-page-card"
-                id={"card" + id}
+          <FadeInWhenVisible key={`animation${card.id}`}>
+            <Container
+              className="landing-page-card"
+              id={"card" + id}
+              key={`container${card.id}`}
+            >
+              <div className="mobile-title" key={`title${card.id}`}>
+                <h2
+                  className="landing-page-card-title"
+                  key={`cardTitle${card.id}`}
+                >
+                  {card.frontmatter.title}
+                </h2>
+              </div>
+
+              <GatsbyImage
+                className="landing-page-card-image"
+                image={card.frontmatter.image.childImageSharp.gatsbyImageData}
+                alt={card.frontmatter.title}
                 key={card.id}
-              >
-                <div className="mobile-title">
-                  <h2 className="landing-page-card-title">
+              />
+
+              <div className="landing-page-card-text" key={`text${card.id}`}>
+                <div className="desktop-title" key={`desktop${card.id}`}>
+                  <h2
+                    className="landing-page-card-title"
+                    key={`cardTitle${card.id}`}
+                  >
                     {card.frontmatter.title}
                   </h2>
                 </div>
-
-                <GatsbyImage
-                  className="landing-page-card-image"
-                  image={card.frontmatter.image.childImageSharp.gatsbyImageData}
-                  alt={card.frontmatter.title}
-                  key={card.id}
+                <div
+                  className="landing-page-card-body"
+                  dangerouslySetInnerHTML={{ __html: card.html }}
+                  key={`body${card.id}`}
                 />
 
-                <div className="landing-page-card-text">
-                  <div className="desktop-title">
-                    <h2 className="landing-page-card-title">
-                      {card.frontmatter.title}
-                    </h2>
-                  </div>
-                  <div
-                    className="landing-page-card-body"
-                    dangerouslySetInnerHTML={{ __html: card.html }}
-                  />
-
-                  <div className="landing-page-card-button">
-                    <Link to={card.frontmatter.slug}>
-                      <Button
-                        as={motion.button}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        size="lg"
-                        variant="custom"
-                      >
-                        {card.frontmatter.button}
-                      </Button>
-                    </Link>
-                  </div>
+                <div
+                  className="landing-page-card-button"
+                  key={`button${card.id}`}
+                >
+                  <Link to={card.frontmatter.slug} key={`link${card.id}`}>
+                    <Button
+                      as={motion.button}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      size="lg"
+                      variant="custom"
+                      key={`btn${card.id}`}
+                    >
+                      {card.frontmatter.button}
+                    </Button>
+                  </Link>
                 </div>
-              </Container>
-              <div className="divider div-transparent" key={id}></div>
-            </FadeInWhenVisible>
-          </>
+              </div>
+            </Container>
+            <div className="divider div-transparent" key={id}></div>
+          </FadeInWhenVisible>
         );
       })}
     </>

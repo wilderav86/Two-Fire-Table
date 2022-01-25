@@ -44,7 +44,7 @@ const LandingBackground = () => {
           placeholder="blurred"
         />
       </motion.div>
-      <Parallax className="custom-class" y={[-50, 50]} tagOuter="figure">
+      <Parallax className="custom-class" y={[-30, 30]}>
         <BackgroundImage
           className="background-image"
           Tag="section"
@@ -56,5 +56,7 @@ const LandingBackground = () => {
     </div>
   );
 };
+
+//
 
 export default LandingBackground;

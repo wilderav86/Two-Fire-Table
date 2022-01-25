@@ -1,11 +1,11 @@
 import React from "react";
 
-import headerLogo from "../images/headerlogo.jpg";
+import headerlogo from "../images/headerlogo.jpg";
 
 const Footer = () => {
   return (
     <div className="footer-container">
-      <img src={headerLogo} alt="logo" />
+      <img src={headerlogo} alt="logo" />
     </div>
   );
 };

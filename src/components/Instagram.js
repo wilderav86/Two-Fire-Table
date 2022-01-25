@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Container } from "react-bootstrap";
+import { motion } from "framer-motion";
 
 const Instagram = () => {
   const data = useStaticQuery(graphql`
@@ -11,13 +12,13 @@ const Instagram = () => {
           localFile {
             childImageSharp {
               gatsbyImageData(
-                layout: CONSTRAINED
-                placeholder: BLURRED
-                aspectRatio: 1
-                height: 500
-                width: 500
+                placeholder: TRACED_SVG
+                height: 1000
+                width: 1000
                 transformOptions: { cropFocus: CENTER, fit: COVER }
-                backgroundColor: "grey"
+                formats: WEBP
+                webpOptions: { quality: 50 }
+                layout: CONSTRAINED
               )
               id
             }
@@ -28,32 +29,46 @@ const Instagram = () => {
     }
   `);
 
+  const heading = "Follow us on instagram @TwoFireTable";
+  const instagramLink = "https://www.instagram.com/twofiretable/";
+
   const { nodes } = data.allInstagramContent;
 
-  console.log(data);
-  console.log("fart");
-  // const { id, gatsbyImageData } =
-  //   data.allInstagramContent.nodes.localFile.childImageSharp;
-  // console.log(id, gatsbyImageData);
   return (
-    <Container
-      className="instagram-container"
-      style={{
-        marginBottom: "1rem",
-        display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
-      }}
-    >
-      {nodes.map((image) => {
-        const { gatsbyImageData, id } = image.localFile.childImageSharp;
+    <>
+      <motion.div
+        className="link-container"
+        whileHover={{
+          scale: 1.01,
+          transition: { ease: "easeOut", duration: 0.2 },
+        }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <a className="insta-link" href={instagramLink}>
+          {heading}
+        </a>
+      </motion.div>
+      <div
+        className="instagram-container"
+        // style={{
+        //   marginBottom: "1rem",
+        //   display: "grid",
+        //   gridTemplateColumns: "repeat(2, 1fr)",
+        // }}
+      >
+        {nodes.map((image) => {
+          const { gatsbyImageData, id } = image.localFile.childImageSharp;
 
-        return (
-          // <a href={image.media_url}>
-          <GatsbyImage image={gatsbyImageData} key={id} alt={id} />
-          // </a>
-        );
-      })}
-    </Container>
+          return (
+            <div className="image-container">
+              <a className="image-link" href={image.media_url} key={id}>
+                <GatsbyImage image={gatsbyImageData} key={id} alt={id} />
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 

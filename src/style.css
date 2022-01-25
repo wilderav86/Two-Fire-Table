@@ -98,7 +98,7 @@ body,
 }
 
 .header-logo {
-  height: 10vh;
+  height: 12vh;
   margin-top: -10px;
   margin-bottom: -10px;
 }
@@ -148,10 +148,10 @@ body,
 
 .mission-statement {
   font-family: "montserrat";
-  font-size: 1.8em;
+  font-size: 1.7em;
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 120px;
+  margin-top: 80px;
+  margin-bottom: 75px;
   margin-right: 20px;
   margin-left: 20px;
 }
@@ -282,8 +282,30 @@ p {
 /* INSTAGRAM */
 
 .instagram-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   overflow: hidden;
-  margin-top: 100px;
+  margin-top: 60px;
+}
+
+.link-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.insta-link {
+  font-family: "montserrat";
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+}
+
+.image-container {
+  /* width: 50%;
+  height: 50%; */
 }
 
 /* ABOUT PAGE */
@@ -304,10 +326,12 @@ p {
   font-family: "montserrat";
   text-align: center;
   margin: 30px;
+  margin-top: 70px;
 }
 
 .about-title {
   font-family: "montserrat";
+  margin: 30px;
 }
 
 .about-card {
@@ -399,8 +423,9 @@ p {
 
 .footer-container {
   display: flex;
-  height: 10vh;
+  height: 13vh;
   width: 100%;
+  background-color: #4d577a;
 }
 
 /* ///////////////////////////////////DESKTOP STYLING////////////////////////////////////// */
@@ -408,13 +433,6 @@ p {
 @media screen and (max-width: 800px) {
   .contact-content {
     flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .contact-content {
-    margin-right: 15vh;
-    margin-left: 15vh;
   }
 }
 
@@ -499,6 +517,12 @@ p {
     margin: 25px;
   }
 
+  /* INSTAGRAM desktop */
+
+  .instagram-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   /* CONTACT PAGE desktop */
 
   .contact-header {
@@ -513,5 +537,13 @@ p {
 
 /* ///////////////////////////////////WIDE SCREEN STYLING////////////////////////////////////// */
 
-@media (min-width: 1300px) {
+@media screen and (min-width: 1200px) {
+  .contact-content {
+    margin-right: 15vh;
+    margin-left: 15vh;
+  }
+
+  .instagram-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
