@@ -2,7 +2,8 @@ import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { motion } from "framer-motion";
-import headerLogo from "../images/headerlogo.jpg";
+import headerbadge from "../images/headerbadge.jpg";
+
 // import Nav from "./Nav";
 
 const Header = () => {
@@ -25,19 +26,22 @@ const Header = () => {
 
   return (
     <header className="header-container">
-      <Container>
-        <Navbar expand="md" bg="#e8533f" variant="dark">
-          <Navbar.Brand href="/">
-            <motion.img
-              className="header-logo"
-              src={headerLogo}
-              alt="header logo"
-              whileHover={{
-                scale: 1.2,
-                transition: { duration: 0.2 },
-              }}
-            />
-          </Navbar.Brand>
+      <Container as="div" className="header-content">
+        <Navbar className="navbar" expand="md" bg="#e8533f" variant="dark">
+          <div className="headerBadge">
+            <Navbar.Brand href="/">
+              <motion.img
+                className="header-logo"
+                src={headerbadge}
+                alt="header logo"
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.2 },
+                }}
+              />
+            </Navbar.Brand>
+          </div>
+
           <Navbar.Toggle
             aria-controls="navbarResponsive"
             className="justify-content-end"

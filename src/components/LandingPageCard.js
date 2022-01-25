@@ -37,7 +37,6 @@ const LandingPageCard = () => {
   return (
     <>
       {nodes.map((card, id) => {
-        console.log("card" + id);
         return (
           <>
             <FadeInWhenVisible>

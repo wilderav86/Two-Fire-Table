@@ -17,6 +17,7 @@
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "bootstrap": "^5.1.3",
+    "dotenv": "^14.3.0",
     "framer-motion": "^5.5.5",
     "gatsby": "^4.3.0",
     "gatsby-background-image": "^1.5.3",
@@ -28,6 +29,7 @@
     "gatsby-plugin-sharp": "^4.4.0",
     "gatsby-remark-images": "^6.4.0",
     "gatsby-source-filesystem": "^4.4.0",
+    "gatsby-source-instagram-all": "^5.2.1",
     "gatsby-transformer-remark": "^5.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "gbimage-bridge": "^0.1.4",

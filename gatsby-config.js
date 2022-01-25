@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -75,6 +79,15 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [],
+      },
+    },
+
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        // access_token:
+        //   "IGQVJWNi0yQ3A2TDU1cnZAHbEw4aXZAZAWW5UM2RPb0VWMV9qM0pwSkdsRWZALeU5RV0Q5cjdhdDhpQUExcWZASRHZArNUlRbC1NN215VTJJMnVoYzdReXp4VTR1RXYyakptQkNzdmQ5M0JaU0p4b0xaak1lbwZDZD",
+        access_token: process.env.GATSBY_INSTAGRAM,
       },
     },
 
