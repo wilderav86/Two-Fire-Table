@@ -5,7 +5,6 @@ import { Carousel, Container } from "react-bootstrap";
 import Layout from "../components/Layout";
 
 const Gallery = ({ data }) => {
-  console.log(data);
   const { edges } = data.allFile;
   return (
     <Layout>

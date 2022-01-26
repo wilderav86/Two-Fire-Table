@@ -110,7 +110,7 @@ const Contact = () => {
               <h5>Email</h5>
               <p>Twofiretable@gmail.com</p>
               <h5>Phone</h5>
-              <p>(###) ###-####</p>
+              <p>423.612.0788</p>
             </Container>
           </div>
         </PageTransition>

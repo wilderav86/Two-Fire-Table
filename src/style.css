@@ -80,7 +80,7 @@ body,
 
   background-color: #e8533f;
   overflow: hidden;
-  border-bottom: 4px solid #1b4f64;
+  border-bottom: 4px solid #d3bb54;
   z-index: 5;
   top: 0;
 }
@@ -129,9 +129,9 @@ body,
 .app-container {
   display: flex;
   flex-direction: column;
-  background-color: #dfddd1;
-
-  z-index: -1;
+  background-color: #f2f0eb;
+  /* min-height: 100%; */
+  /* z-index: -1; */
 }
 
 .content {
@@ -150,10 +150,11 @@ body,
   font-family: "montserrat";
   font-size: 1.7em;
   text-align: center;
-  margin-top: 80px;
+  padding-top: 95px;
   margin-bottom: 75px;
-  margin-right: 20px;
-  margin-left: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-top: 6px solid #d3bb54;
 }
 
 /* LANDING BACKGROUND */
@@ -191,6 +192,7 @@ body,
 
 .landing-page-card.container {
   position: relative;
+  min-height: 100%;
 }
 
 .landing-page-card {
@@ -284,7 +286,7 @@ p {
 .instagram-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-top: 60px;
 }
 
@@ -320,6 +322,7 @@ p {
   text-align: center;
   background-color: #cec7ab;
   color: #1f354a;
+  margin-bottom: 80px;
 }
 
 .about-header {
@@ -342,6 +345,37 @@ p {
 
 .about-body p {
   font-size: 1.5rem;
+}
+
+/* MENU PAGE */
+
+.menu-page-container {
+  background-color: #2d4c59;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 87px;
+  top: 88px;
+  /* transform: translateY(40px); */
+}
+
+.menus-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-image {
+  display: flex;
+  box-shadow: 5px 5px 5px black;
+}
+
+/* MENU CARD */
+
+.menu-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: blanchedalmond;
 }
 
 /* GALLERY PAGE */
@@ -417,15 +451,25 @@ p {
   width: 80vw;
   text-align: center;
   margin-top: 40px;
+  margin-bottom: 10vh;
 }
 
 /* FOOTER */
 
 .footer-container {
   display: flex;
+  position: relative;
+  /* margin-top: 80px; */
+  bottom: 0;
   height: 13vh;
   width: 100%;
-  background-color: #4d577a;
+  background-color: #1f2c3c;
+  border-top: 4px solid #d3bb54;
+  z-index: 100;
+}
+
+.footer-logo {
+  background-color: #18212d;
 }
 
 /* ///////////////////////////////////DESKTOP STYLING////////////////////////////////////// */
@@ -437,7 +481,12 @@ p {
 }
 
 @media screen and (min-width: 800px) {
-  /* LANDING BACKGROUND Desktop*/
+  /* INDEX Desktop*/
+
+  .mission-statement {
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
 
   /* LANDING PAGE Desktop*/
 
@@ -521,6 +570,16 @@ p {
 
   .instagram-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* MENU PAGE desktop */
+
+  .menus-container {
+    margin: 25px;
+  }
+
+  .menu-image {
+    margin: 20px;
   }
 
   /* CONTACT PAGE desktop */

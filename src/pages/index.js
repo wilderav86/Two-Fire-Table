@@ -12,7 +12,7 @@ import Instagram from "../components/Instagram";
 
 const IndexPage = () => {
   const missionStatement =
-    "Two Fire Table encapsulates cumulatuve experiences by emphasizing the fusion of seasonal Virginia ingredients with rich cultures to bring a memorable experience shared by the fire";
+    "Two Fire Table encapsulates cumulatuve experiences by emphasizing the fusion of seasonal Virginia ingredients with rich cultures to bring a memorable experience shared by the fire.";
 
   console.log("hello");
   return (

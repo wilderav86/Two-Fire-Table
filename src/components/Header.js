@@ -38,6 +38,7 @@ const Header = () => {
                   scale: 1.1,
                   transition: { duration: 0.2 },
                 }}
+                whileTap={{ scale: 0.9 }}
               />
             </Navbar.Brand>
           </div>
