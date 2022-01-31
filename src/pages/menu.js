@@ -13,11 +13,7 @@ const Menu = ({ data }) => {
   return (
     <Layout>
       <div className="menu-page-container">
-        <Container>
-          <h1>Sample Menus</h1>
-        </Container>
         <MenuCard />
-
         <Container className="menus-container">
           {edges.map((images, id) => {
             const { gatsbyImageData } = images.node.childImageSharp;

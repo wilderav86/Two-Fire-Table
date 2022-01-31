@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
 
 const Instagram = () => {
@@ -15,10 +14,8 @@ const Instagram = () => {
                 placeholder: TRACED_SVG
                 height: 1000
                 width: 1000
-                transformOptions: { cropFocus: CENTER, fit: COVER }
                 formats: WEBP
                 webpOptions: { quality: 50 }
-                layout: CONSTRAINED
               )
               id
             }
@@ -48,19 +45,12 @@ const Instagram = () => {
           {heading}
         </a>
       </motion.div>
-      <div
-        className="instagram-container"
-        // style={{
-        //   marginBottom: "1rem",
-        //   display: "grid",
-        //   gridTemplateColumns: "repeat(2, 1fr)",
-        // }}
-      >
+      <div className="instagram-container">
         {nodes.map((image) => {
           const { gatsbyImageData, id } = image.localFile.childImageSharp;
 
           return (
-            <div className="image-container">
+            <div className="image-container" key={id}>
               <a className="image-link" href={image.media_url} key={id}>
                 <GatsbyImage image={gatsbyImageData} key={id} alt={id} />
               </a>

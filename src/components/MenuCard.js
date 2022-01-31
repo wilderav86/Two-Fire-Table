@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import { Container } from "react-bootstrap";
 
 const MenuCard = () => {
   const data = useStaticQuery(graphql`
@@ -24,7 +25,7 @@ const MenuCard = () => {
   console.log(nodes);
 
   return (
-    <div className="menu-card-container">
+    <Container as="div" className="menu-card-container">
       {nodes.map((menu, id) => {
         const { title } = menu.frontmatter;
         console.log(menu);
@@ -38,7 +39,7 @@ const MenuCard = () => {
           </div>
         );
       })}
-    </div>
+    </Container>
   );
 };
 

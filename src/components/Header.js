@@ -1,10 +1,8 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { motion } from "framer-motion";
 import headerbadge from "../images/headerbadge.jpg";
-
-// import Nav from "./Nav";
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -22,11 +20,9 @@ const Header = () => {
 
   const { menupageLinks } = data.site.siteMetadata;
 
-  // conditionally render button animations depending on if mobile or desktop
-
   return (
     <header className="header-container">
-      <Container as="div" className="header-content">
+      <div className="header-content">
         <Navbar className="navbar" expand="md" bg="#e8533f" variant="dark">
           <div className="headerBadge">
             <Navbar.Brand href="/">
@@ -68,15 +64,8 @@ const Header = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </Container>
+      </div>
     </header>
-
-    // <React.Fragment>
-    //   <div className="header-container">
-    //
-    //     {/* <Nav /> */}
-    //   </div>
-    // </React.Fragment>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage, StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
@@ -11,7 +11,12 @@ const LandingBackground = () => {
     query BackgroundImage {
       bgImage: file(relativePath: { eq: "fourchickens.jpg" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
+          gatsbyImageData(
+            placeholder: BLURRED
+            layout: CONSTRAINED
+            formats: WEBP
+            quality: 50
+          )
         }
       }
     }
@@ -19,16 +24,6 @@ const LandingBackground = () => {
 
   const image = getImage(bgImage);
   const backgroundImage = convertToBgImage(image);
-
-  //background parallax effect.
-  // const [offsetY, setOffsetY] = useState(0);
-  // const handleScroll = () => setOffsetY(window.pageYOffset);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
 
   return (
     <div className="background-container">
@@ -50,7 +45,6 @@ const LandingBackground = () => {
           Tag="section"
           {...backgroundImage}
           preserveStackingContext
-          // style={{ transform: `translateY(${offsetY * -0.4}px)` }}
         ></BackgroundImage>
       </Parallax>
     </div>
