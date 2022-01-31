@@ -30,6 +30,8 @@ const NewsLetterForm = () => {
     setUserEmail(e.target.value);
   };
 
+  console.log(submissionResult);
+
   return (
     <>
       <div className="newsletter-container">

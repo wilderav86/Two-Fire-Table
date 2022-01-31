@@ -111,6 +111,11 @@ body,
 .nav-item {
   font-family: "montserrat";
   font-size: 1.2rem;
+  margin-left: 25px;
+}
+
+.nav-link {
+  color: azure;
 }
 
 /* INDEX */
