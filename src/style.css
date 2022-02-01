@@ -342,6 +342,7 @@ p {
   background-color: #2d4c59;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
   margin-bottom: 87px;
   top: 88px;
@@ -352,6 +353,15 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.sample-menu-header {
+  color: white;
+  text-align: center;
+  font-family: "montserrat";
+  padding: 20px;
+  border: 2px solid white;
+  margin-bottom: 40px;
 }
 
 .menu-image {
@@ -366,6 +376,7 @@ p {
   flex-direction: column;
   background-color: #f2f0eb;
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .menu-card {
@@ -374,6 +385,7 @@ p {
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 40px;
+  margin-bottom: 40px;
   overflow: hidden;
 }
 
@@ -408,6 +420,9 @@ p {
   display: flex;
   position: relative;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
   min-height: 100%;
   top: 81px;
   background-color: #eee8e8;
@@ -491,7 +506,7 @@ p {
 }
 
 .newsletter-header {
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: #ffffff;
 }
 
@@ -524,7 +539,7 @@ p {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 740px) {
   /* INDEX Desktop*/
 
   .mission-statement {
@@ -624,6 +639,10 @@ p {
 
   .menu-image {
     margin: 20px;
+  }
+
+  .menu-card-container {
+    width: 64%;
   }
 
   /* CONTACT PAGE desktop */

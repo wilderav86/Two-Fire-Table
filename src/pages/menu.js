@@ -4,32 +4,37 @@ import { Container } from "react-bootstrap";
 import { GatsbyImage } from "gatsby-plugin-image";
 import MenuCard from "../components/MenuCard";
 import Layout from "../components/Layout";
+import PageTransition from "../animations/PageTransition";
 
 const Menu = ({ data }) => {
   const { edges } = data.allFile;
 
-  // console.log(data);
+  const sampleMenuHeader =
+    "We can provide a uniquely curated menu made especially for your event. Contact us for pricing and options";
 
   return (
     <Layout>
-      <div className="menu-page-container">
-        <MenuCard />
-        <Container className="menus-container">
-          {edges.map((images, id) => {
-            const { gatsbyImageData } = images.node.childImageSharp;
+      <PageTransition>
+        <div className="menu-page-container">
+          <MenuCard />
+          <Container className="menus-container">
+            <h2 className="sample-menu-header">{sampleMenuHeader}</h2>
+            {edges.map((images, id) => {
+              const { gatsbyImageData } = images.node.childImageSharp;
 
-            return (
-              <div className="menu-image" key={id}>
-                <GatsbyImage
-                  image={gatsbyImageData}
-                  alt="sample menu"
-                  key={id}
-                />
-              </div>
-            );
-          })}
-        </Container>
-      </div>
+              return (
+                <div className="menu-image" key={id}>
+                  <GatsbyImage
+                    image={gatsbyImageData}
+                    alt="sample menu"
+                    key={id}
+                  />
+                </div>
+              );
+            })}
+          </Container>
+        </div>
+      </PageTransition>
     </Layout>
   );
 };

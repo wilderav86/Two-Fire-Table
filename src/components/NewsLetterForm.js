@@ -13,7 +13,7 @@ const NewsLetterForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log("submitted");
     addToMailchimp(userEmail)
       .then((data) => {
         setSubmissionResult(data);
@@ -59,6 +59,7 @@ const NewsLetterForm = () => {
           </div>
         </Form>
       </div>
+      {/* Conditionally render result modal when submission result changes */}
       {submissionResult && (
         <div>
           <Modal show={showModal} centered>
