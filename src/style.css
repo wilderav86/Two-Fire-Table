@@ -393,7 +393,9 @@ p {
   min-height: 100vh;
   width: 100%;
   padding-bottom: 80px;
+  padding-top: 150px;
   align-items: center;
+  top: 10vh;
 }
 
 .gallery-container {
@@ -402,6 +404,12 @@ p {
   justify-content: center;
   align-items: center;
   top: 10vh;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: #e8533f !important;
+  border-radius: 100%;
 }
 
 /* CONTACT PAGE */
@@ -633,6 +641,8 @@ p {
   .instagram-container {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  /* GALLERY PAGE desktop */
 
   /* MENU PAGE desktop */
 
