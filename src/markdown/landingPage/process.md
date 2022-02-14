@@ -7,6 +7,4 @@ section: landingpage
 order: 2
 ---
 
-#### Our Process with a link to a sample menu
-
-Info about your process, ingredients, sources
+Two Fire Table specializes in private parties, intimate weddings, farm dinners, and private chef services. We serve family style, buffet or grazing tables, and plated dinners to suit your needs. Our menus our curated based on the best seasonal ingredients Virginia has to offer.

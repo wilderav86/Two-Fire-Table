@@ -5,10 +5,10 @@ import { Container } from "react-bootstrap";
 import SEO from "../components/SEO";
 import LandingPageCard from "../components/LandingPageCard";
 import LandingBackground from "../components/BackgroundImage";
-
+import Instagram from "../components/Instagram";
+import ScrollToTop from "../components/ScrollToTop";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";
-import Instagram from "../components/Instagram";
 
 const IndexPage = () => {
   const missionStatement =
@@ -28,6 +28,7 @@ const IndexPage = () => {
             <LandingPageCard />
           </Container>
           <Instagram />
+          <ScrollToTop />
         </div>
       </Layout>
     </ParallaxProvider>

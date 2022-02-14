@@ -106,10 +106,6 @@ body {
   margin-left: 25px;
 }
 
-.nav-link {
-  color: azure;
-}
-
 /* INDEX */
 
 .app-container {
@@ -132,13 +128,26 @@ body {
 
 .mission-statement {
   font-family: "montserrat";
-  font-size: 1.7em;
+  font-size: 1.6em;
+  font-weight: bold;
   text-align: center;
   padding-top: 95px;
   margin-bottom: 75px;
   padding-right: 20px;
   padding-left: 20px;
   border-top: 6px solid #d3bb54;
+}
+
+/* SCROLL TO TOP */
+
+.scroll-to-top {
+  font-size: 1.2rem;
+  color: #e8533f;
+  align-self: center;
+  text-align: center;
+  height: 5vh;
+  margin: 20px;
+  cursor: pointer;
 }
 
 /* LANDING BACKGROUND */
@@ -196,7 +205,7 @@ body {
 
 .landing-page-card-text h4,
 p {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 200;
 }
 
@@ -570,6 +579,12 @@ p {
     font-size: 2.7rem;
   }
 
+  .landing-page-card-text h4,
+  p {
+    font-size: 1.8rem;
+    font-weight: 200;
+  }
+
   .landing-page-card-image {
     display: flex;
     justify-content: center;
@@ -594,6 +609,7 @@ p {
     flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
+    width: 75%;
   }
 
   .mobile-title {

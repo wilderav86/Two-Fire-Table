@@ -22,15 +22,13 @@ const MenuCard = () => {
 
   const { nodes } = data.allMarkdownRemark;
 
-  console.log(nodes);
-
   return (
     <Container as="div" className="menu-card-container">
       {nodes.map((menu, id) => {
         const { title } = menu.frontmatter;
-        console.log(menu);
+
         return (
-          <div className="menu-card">
+          <div className="menu-card" key={id}>
             <div className="menu-card-title">{title}</div>
             <div
               className="menu-card-text"

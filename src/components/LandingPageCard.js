@@ -17,11 +17,7 @@ const LandingPageCard = () => {
             button
             image {
               childImageSharp {
-                gatsbyImageData(
-                  width: 1000
-                  formats: WEBP
-                  placeholder: BLURRED
-                )
+                gatsbyImageData(width: 700, formats: WEBP, placeholder: BLURRED)
               }
             }
             slug

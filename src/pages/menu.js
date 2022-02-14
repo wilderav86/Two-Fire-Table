@@ -5,6 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import MenuCard from "../components/MenuCard";
 import Layout from "../components/Layout";
 import PageTransition from "../animations/PageTransition";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Menu = ({ data }) => {
   const { edges } = data.allFile;
@@ -33,6 +34,7 @@ const Menu = ({ data }) => {
               );
             })}
           </Container>
+          <ScrollToTop />
         </div>
       </PageTransition>
     </Layout>

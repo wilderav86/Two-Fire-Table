@@ -10,7 +10,7 @@ sauteed chorizo, tomato, basil, parsley, sherry vinegar
 
 ## CRISPY SMASHED POTATOES
 
-new potatoes, garlic, onion, chili aoli
+new potatoes, garlic, onion, chili aioli
 
 ## CARNITAS
 
