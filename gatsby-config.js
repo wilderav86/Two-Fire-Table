@@ -6,8 +6,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Two-Fire-Table",
+    siteUrl: "https://www.twofiretable.com",
+    title: "Two Fire Table",
     description:
       "A website for Two Fire Table built with Gatsby. Two Fire Table seeks to thoughtfully prepare over-the-fire dining experiences that spark profound connections with one another through community and food.",
     proprietor: "Sarah Rennie",

@@ -9,6 +9,7 @@ import Instagram from "../components/Instagram";
 import ScrollToTop from "../components/ScrollToTop";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";
+import { Helmet } from "react-helmet";
 
 const IndexPage = () => {
   const missionStatement =
@@ -19,9 +20,10 @@ const IndexPage = () => {
     <ParallaxProvider>
       <Layout>
         <div className="app-container">
-          <SEO />
+          <Helmet>
+            <SEO title="Two Fire Table" siteUrl="www.twofiretable.com" />
+          </Helmet>
           <LandingBackground />
-
           <h1 className="mission-statement">{missionStatement}</h1>
           <div className="divider div-transparent"></div>
           <Container className="content">
