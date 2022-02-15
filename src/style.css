@@ -129,7 +129,7 @@ body {
 .mission-statement {
   font-family: "montserrat";
   font-size: 1.6em;
-  font-weight: bold;
+
   text-align: center;
   padding-top: 95px;
   margin-bottom: 75px;
@@ -309,7 +309,7 @@ p {
   align-items: center;
   text-align: center;
   padding-bottom: 20vh;
-  background-color: #cec7ab;
+  background-color: #f2f0eb;
   color: #1f354a;
 }
 
@@ -318,6 +318,7 @@ p {
   text-align: center;
   margin: 30px;
   margin-top: 70px;
+  border-style: 4px solid #d3bb54;
 }
 
 .about-title {
@@ -333,6 +334,7 @@ p {
 
 .about-body p {
   font-size: 1.5rem;
+  margin-top: 25px;
 }
 
 /* MENU PAGE */
@@ -412,6 +414,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
   top: 10vh;
 }
 
@@ -640,6 +643,10 @@ p {
     justify-content: space-between;
   }
 
+  .about-image {
+    height: 60vh;
+  }
+
   .about-card {
     display: flex;
     flex-direction: column;
@@ -678,6 +685,7 @@ p {
 
   .contact-header {
     margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   .contact-us-container {
