@@ -13,16 +13,14 @@ import { Helmet } from "react-helmet";
 
 const IndexPage = () => {
   const missionStatement =
-    "Located in Scottsville, Virginia, Two Fire Table encapsulates cumulatuve experiences by emphasizing the fusion of seasonal Virginia ingredients with rich cultures to bring a memorable experience shared by the fire.";
+    "Located in Scottsville, Virginia, Two Fire Table encapsulates cumulative experiences by emphasizing the fusion of seasonal Virginia ingredients with rich cultures to bring a memorable experience shared by the fire.";
 
-  console.log("hello");
   return (
     <ParallaxProvider>
       <Layout>
         <div className="app-container">
-          <Helmet>
-            <SEO title="Two Fire Table" siteUrl="www.twofiretable.com" />
-          </Helmet>
+          <Helmet></Helmet>
+          <SEO title="Two Fire Table" siteUrl="www.twofiretable.com" />
           <LandingBackground />
           <h1 className="mission-statement">{missionStatement}</h1>
           <div className="divider div-transparent"></div>
