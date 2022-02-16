@@ -28,6 +28,7 @@
     "gatsby-plugin-netlify-cms": "^6.3.0",
     "gatsby-plugin-react-helmet": "^5.5.0",
     "gatsby-plugin-sharp": "^4.4.0",
+    "gatsby-plugin-sitemap": "^5.7.0",
     "gatsby-remark-images": "^6.4.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-source-instagram-all": "^5.2.1",

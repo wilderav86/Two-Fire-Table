@@ -40,6 +40,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-remark-images`,
+    `gatsby-plugin-sitemap`,
 
     {
       resolve: `gatsby-plugin-google-fonts-v2`,
