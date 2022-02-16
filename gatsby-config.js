@@ -8,8 +8,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.twofiretable.com",
     title: "Two Fire Table",
-    description:
-      "A website for Two Fire Table built with Gatsby. Two Fire Table seeks to thoughtfully prepare over-the-fire dining experiences that spark profound connections with one another through community and food.",
+    description: "Thoughtfully prepared over-the-fire dining experiences",
     proprietor: "Sarah Rennie",
     instagramHandle: "@twofiretable",
     author: "Adam Wilder",
