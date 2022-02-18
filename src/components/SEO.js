@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
-const SEO = ({ title, siteUrl, description, author, keywords }) => {
+const SEO = ({ title, siteUrl, description, author, keywords, pathname }) => {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -12,7 +12,9 @@ const SEO = ({ title, siteUrl, description, author, keywords }) => {
         const metaDescription =
           description || data.site.siteMetadata.description;
         const metaTitle = title || data.site.siteMetadata.title;
-
+        const canonical = pathname
+          ? `${site.siteMetadata.siteUrl}${pathname}`
+          : null;
         const metaAuthor = author || data.site.siteMetadata.author;
         const metaKeywords = keywords || [
           "two",
@@ -28,6 +30,19 @@ const SEO = ({ title, siteUrl, description, author, keywords }) => {
         return (
           <Helmet
             title={title}
+            htmlAttributes={{
+              lang,
+            }}
+            link={
+              canonical
+                ? [
+                    {
+                      rel: "canonical",
+                      href: canonical,
+                    },
+                  ]
+                : []
+            }
             meta={[
               {
                 name: `description`,

@@ -42,6 +42,14 @@ module.exports = {
     `gatsby-plugin-sitemap`,
 
     {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.twofiretable.com",
+        sitemap: "https://www.twofiretable.com/sitemap.xml",
+      },
+    },
+
+    {
       resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
