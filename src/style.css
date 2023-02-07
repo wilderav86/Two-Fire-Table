@@ -640,18 +640,19 @@ p {
 
   .about-card-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .about-image {
-    height: 60vh;
+    width: 20vw;
   }
 
   .about-card {
     display: flex;
     flex-direction: column;
     width: 45vw;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     margin: 35px;
   }
 

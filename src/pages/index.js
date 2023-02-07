@@ -20,7 +20,7 @@ const IndexPage = () => {
       <Layout>
         <div className="app-container">
           <Helmet></Helmet>
-          <SEO title="Two Fire Table" siteUrl="www.twofiretable.com" />
+          {/* <SEO title="Two Fire Table" siteUrl="www.twofiretable.com" /> */}
           <LandingBackground />
           <h1 className="mission-statement">{missionStatement}</h1>
           <div className="divider div-transparent"></div>

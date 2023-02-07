@@ -33,6 +33,10 @@ module.exports = {
       },
     ],
   },
+  flags: {
+    LMDB_STORE: true,
+    DETECT_NODE_MUTATIONS: true,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
