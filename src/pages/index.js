@@ -12,18 +12,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";
 import { Helmet } from "react-helmet";
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query Banner {
-      allContentfulBanner {
-        nodes {
-          text
-        }
-      }
-    }
-  `);
+const IndexPage = ({ data }) => {
+  // const data = useStaticQuery(graphql`
+  //   query Banner {
+  //     allContentfulBanner {
+  //       nodes {
+  //         text
+  //       }
+  //     }
+  //     contentfulHomePageHeroImage {
+  //       heroImage {
+  //         gatsbyImageData(
+  //           formats: WEBP
+  //           layout: CONSTRAINED
+  //           quality: 50
+  //           placeholder: BLURRED
+  //         )
+  //       }
+  //   }
+  // `);
 
   const { text } = data.allContentfulBanner.nodes.at(0);
+  const { heroImage } = data.contentfulHomePageHeroImage;
 
   return (
     <ParallaxProvider>
@@ -31,7 +41,7 @@ const IndexPage = () => {
         <div className="app-container">
           <Helmet></Helmet>
           {/* <SEO title="Two Fire Table" siteUrl="www.twofiretable.com" /> */}
-          <LandingBackground />
+          <LandingBackground heroImage={heroImage} />
           <h1 className="mission-statement">{text}</h1>
           <div className="divider div-transparent"></div>
           <Container className="content">
@@ -44,5 +54,25 @@ const IndexPage = () => {
     </ParallaxProvider>
   );
 };
+
+export const query = graphql`
+  query Banner {
+    allContentfulBanner {
+      nodes {
+        text
+      }
+    }
+    contentfulHomePageHeroImage {
+      heroImage {
+        gatsbyImageData(
+          formats: WEBP
+          layout: CONSTRAINED
+          quality: 50
+          placeholder: BLURRED
+        )
+      }
+    }
+  }
+`;
 
 export default IndexPage;

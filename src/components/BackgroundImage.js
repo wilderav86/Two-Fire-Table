@@ -6,7 +6,7 @@ import { convertToBgImage } from "gbimage-bridge";
 import { motion } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 
-const LandingBackground = () => {
+const LandingBackground = ({ heroImage }) => {
   // const { bgImage } = useStaticQuery(graphql`
   //   query BackgroundImage {
   //     bgImage: file(relativePath: { eq: "fourchickens.jpg" }) {
@@ -22,22 +22,22 @@ const LandingBackground = () => {
   //   }
   // `);
 
-  const data = useStaticQuery(graphql`
-    query LandingBackground {
-      contentfulHomePageHeroImage {
-        heroImage {
-          gatsbyImageData(
-            formats: WEBP
-            layout: CONSTRAINED
-            quality: 50
-            placeholder: BLURRED
-          )
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query LandingBackground {
+  //     contentfulHomePageHeroImage {
+  //       heroImage {
+  //         gatsbyImageData(
+  //           formats: WEBP
+  //           layout: CONSTRAINED
+  //           quality: 50
+  //           placeholder: BLURRED
+  //         )
+  //       }
+  //     }
+  //   }
+  // `);
 
-  const bgimage = getImage(data.contentfulHomePageHeroImage.heroImage);
+  const bgimage = getImage(heroImage);
   const backgroundImage = convertToBgImage(bgimage);
   console.log(backgroundImage, "image");
 
