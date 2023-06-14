@@ -1,4 +1,5 @@
 import * as React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Container } from "react-bootstrap";
@@ -12,8 +13,17 @@ import "../style.css";
 import { Helmet } from "react-helmet";
 
 const IndexPage = () => {
-  const missionStatement =
-    "Located in Scottsville, Virginia, Two Fire Table encapsulates cumulative experiences by emphasizing the fusion of seasonal Virginia ingredients with rich cultures to bring a memorable experience shared by the fire.";
+  const data = useStaticQuery(graphql`
+    query Banner {
+      allContentfulBanner {
+        nodes {
+          text
+        }
+      }
+    }
+  `);
+
+  const { text } = data.allContentfulBanner.nodes.at(0);
 
   return (
     <ParallaxProvider>
@@ -22,12 +32,12 @@ const IndexPage = () => {
           <Helmet></Helmet>
           {/* <SEO title="Two Fire Table" siteUrl="www.twofiretable.com" /> */}
           <LandingBackground />
-          <h1 className="mission-statement">{missionStatement}</h1>
+          <h1 className="mission-statement">{text}</h1>
           <div className="divider div-transparent"></div>
           <Container className="content">
             <LandingPageCard />
           </Container>
-          <Instagram />
+          {/* <Instagram /> */}
           <ScrollToTop />
         </div>
       </Layout>

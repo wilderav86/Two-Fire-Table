@@ -112,6 +112,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #f2f0eb;
+  background-image: linear-gradient(to right, #f2f0eb, #ece1a971);
 }
 
 .content {
@@ -311,6 +312,7 @@ p {
   padding-bottom: 20vh;
   background-color: #f2f0eb;
   color: #1f354a;
+  background-image: linear-gradient(to right, #f2f0eb, #ece7a971);
 }
 
 .about-header {
@@ -326,15 +328,19 @@ p {
   margin: 30px;
 }
 
+.about-image {
+  border-radius: 8px;
+  box-shadow: 2px 5px 5px rgb(128, 128, 128);
+}
+
 .about-card {
   display: flex;
   flex-direction: column;
   align-content: space-around;
 }
 
-.about-body p {
+.about-body {
   font-size: 1.5rem;
-  margin-top: 25px;
 }
 
 /* MENU PAGE */
@@ -347,6 +353,7 @@ p {
   position: relative;
   padding-bottom: 20vh;
   top: 10vh;
+  background-image: linear-gradient(to bottom, #2d4c59, #4b4f51b6);
 }
 
 .menus-container {
@@ -366,7 +373,7 @@ p {
 
 .menu-image {
   display: flex;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 2px 5px 5px black;
 }
 
 /* MENU CARD */
@@ -377,6 +384,8 @@ p {
   background-color: #f2f0eb;
   margin-top: 40px;
   margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
 }
 
 .menu-card {
@@ -387,14 +396,30 @@ p {
   margin-top: 40px;
   margin-bottom: 40px;
   overflow: hidden;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to left,
+    #f2f0eb,
+    rgba(224, 245, 255, 0.598)
+  );
+}
+
+.menu-item-container {
+  display: grid;
+  place-items: center;
+  border-bottom: #18212d;
 }
 
 .menu-card-title {
-  margin-bottom: 30px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 2rem;
 }
 
 .menu-card-text {
   text-align: center;
+  font-size: 1.3rem;
 }
 
 /* GALLERY PAGE */
@@ -411,6 +436,7 @@ p {
 
 .gallery-container {
   background-color: #dfddd1;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -422,6 +448,13 @@ p {
 .carousel-control-prev-icon {
   background-color: #e8533f !important;
   border-radius: 100%;
+}
+.carousel-inner {
+  padding: 5px;
+}
+.carousel-image {
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.692);
 }
 
 /* CONTACT PAGE */
@@ -636,6 +669,12 @@ p {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+  }
+
+  .about-body {
+    margin: 2rem;
+    font-size: 1.5rem;
+    font-family: "Oswald";
   }
 
   .about-card-container {

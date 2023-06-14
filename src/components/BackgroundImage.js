@@ -7,23 +7,39 @@ import { motion } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 
 const LandingBackground = () => {
-  const { bgImage } = useStaticQuery(graphql`
-    query BackgroundImage {
-      bgImage: file(relativePath: { eq: "fourchickens.jpg" }) {
-        childImageSharp {
+  // const { bgImage } = useStaticQuery(graphql`
+  //   query BackgroundImage {
+  //     bgImage: file(relativePath: { eq: "fourchickens.jpg" }) {
+  //       childImageSharp {
+  //         gatsbyImageData(
+  //           placeholder: BLURRED
+  //           layout: CONSTRAINED
+  //           formats: WEBP
+  //           quality: 50
+  //         )
+  //       }
+  //     }
+  //   }
+  // `);
+
+  const data = useStaticQuery(graphql`
+    query LandingBackground {
+      contentfulHomePageHeroImage {
+        heroImage {
           gatsbyImageData(
-            placeholder: BLURRED
-            layout: CONSTRAINED
             formats: WEBP
+            layout: CONSTRAINED
             quality: 50
+            placeholder: BLURRED
           )
         }
       }
     }
   `);
 
-  const image = getImage(bgImage);
-  const backgroundImage = convertToBgImage(image);
+  const bgimage = getImage(data.contentfulHomePageHeroImage.heroImage);
+  const backgroundImage = convertToBgImage(bgimage);
+  console.log(backgroundImage, "image");
 
   return (
     <div className="background-container">

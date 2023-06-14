@@ -1,30 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Container } from "react-bootstrap";
 
 const MenuCard = () => {
+  const [season, setSeason] = useState("");
+
   const data = useStaticQuery(graphql`
-    query MenuCardQuery {
-      allMarkdownRemark(
-        filter: { frontmatter: { section: { eq: "Menu" } } }
-        sort: { order: ASC, fields: frontmatter___order }
-      ) {
-        nodes {
-          frontmatter {
-            title
+    query menuPage {
+      allContentfulMenuItem(sort: { fields: group, order: DESC }) {
+        group(field: group) {
+          nodes {
+            dishTitle
+            childContentfulMenuItemDishDescriptionTextNode {
+              dishDescription
+            }
             order
           }
-          html
+          fieldValue
         }
       }
     }
   `);
+  // const data = useStaticQuery(graphql`
+  //   query MenuCardQuery {
+  //     allMarkdownRemark(
+  //       filter: { frontmatter: { section: { eq: "Menu" } } }
+  //       sort: { order: ASC, fields: frontmatter___order }
+  //     ) {
+  //       nodes {
+  //         frontmatter {
+  //           title
+  //           order
+  //         }
+  //         html
+  //       }
+  //     }
+  //   }
+  // `);
 
-  const { nodes } = data.allMarkdownRemark;
+  const { group } = data.allContentfulMenuItem;
+
+  console.log(group);
+
+  const renderMenuItems = group.map((menuItem, id) => {
+    return (
+      <>
+        <div className="menu-card-title">{}</div>
+        <div className="menu-card-text"></div>
+      </>
+    );
+  });
+
+  const renderMenuCards = group.map((cardData, id) => {
+    console.log(cardData);
+
+    return (
+      <div className="menu-card" key={id} group={cardData.group}>
+        {cardData.fieldValue + " menu"}
+        {cardData.nodes.map((menuItem, id) => {
+          console.log("menu item", menuItem);
+          return (
+            <>
+              <div className="menu-item-container">
+                <div className="menu-card-title">{menuItem.dishTitle}</div>
+                <div className="menu-card-text">
+                  {
+                    menuItem.childContentfulMenuItemDishDescriptionTextNode
+                      .dishDescription
+                  }
+                </div>
+              </div>
+            </>
+          );
+        })}
+      </div>
+    );
+  });
 
   return (
     <Container as="div" className="menu-card-container">
-      {nodes.map((menu, id) => {
+      {renderMenuCards}
+      {/* {renderMenuItems} */}
+      {/* {nodes.map((menu, id) => {
         const { title } = menu.frontmatter;
 
         return (
@@ -36,7 +93,7 @@ const MenuCard = () => {
             />
           </div>
         );
-      })}
+      })} */}
     </Container>
   );
 };

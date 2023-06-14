@@ -33,10 +33,7 @@ module.exports = {
       },
     ],
   },
-  flags: {
-    LMDB_STORE: true,
-    DETECT_NODE_MUTATIONS: true,
-  },
+
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -44,6 +41,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-remark-images`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
 
     {
       resolve: "gatsby-plugin-robots-txt",
