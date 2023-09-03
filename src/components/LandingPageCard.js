@@ -8,35 +8,59 @@ import FadeInWhenVisible from "../animations/FadeInWhenVisible";
 const LandingPageCard = () => {
   const data = useStaticQuery(graphql`
     query LandingPageCardData {
-      allMarkdownRemark(
-        filter: { frontmatter: { section: { eq: "landingpage" } } }
-        sort: { fields: frontmatter___order }
-      ) {
+      allContentfulHomePageCard(sort: { order: ASC, fields: cardOrder }) {
         nodes {
-          frontmatter {
-            button
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 700, formats: WEBP, placeholder: BLURRED)
-              }
-            }
-            slug
-            title
-            section
+          body {
+            body
           }
-          html
-          id
+          image {
+            gatsbyImageData(height: 500)
+          }
+          title
+          video {
+            file {
+              url
+            }
+            url
+          }
+          buttonData
         }
       }
     }
   `);
 
-  const { nodes } = data.allMarkdownRemark;
+  // const data = useStaticQuery(graphql`
+  //   query LandingPageCardData {
+  //     allMarkdownRemark(
+  //       filter: { frontmatter: { section: { eq: "landingpage" } } }
+  //       sort: { fields: frontmatter___order }
+  //     ) {
+  //       nodes {
+  //         frontmatter {
+  //           button
+  //           image {
+  //             childImageSharp {
+  //               gatsbyImageData(width: 700, formats: WEBP, placeholder: BLURRED)
+  //             }
+  //           }
+  //           slug
+  //           title
+  //           section
+  //         }
+  //         html
+  //         id
+  //       }
+  //     }
+  //   }
+  // `);
 
-  console.log(nodes);
+  // const { nodes } = data.allMarkdownRemark;
+  const { nodes } = data.allContentfulHomePageCard;
+
   return (
     <>
       {nodes.map((card, id) => {
+        console.log("card", card);
         return (
           <FadeInWhenVisible key={`animation${card.id}`}>
             <Container
@@ -49,16 +73,30 @@ const LandingPageCard = () => {
                   className="landing-page-card-title"
                   key={`cardTitle${card.id}`}
                 >
-                  {card.frontmatter.title}
+                  {card.title}
                 </h2>
               </div>
 
-              <GatsbyImage
-                className="landing-page-card-image"
-                image={card.frontmatter.image.childImageSharp.gatsbyImageData}
-                alt={card.frontmatter.title}
-                key={card.id}
-              />
+              {card.image && !card.video ? (
+                <GatsbyImage
+                  className="landing-page-card-image"
+                  image={card.image.gatsbyImageData}
+                  // image={card.frontmatter.image.childImageSharp.gatsbyImageData}
+                  alt="card image"
+                  key={card.id}
+                />
+              ) : (
+                <div className="landing-page-card-video">
+                  <video
+                    className="landing-page-card-video"
+                    width="100%"
+                    height="100%"
+                    controls
+                  >
+                    <source src={card.video.file.url} type="video/mp4" />
+                  </video>
+                </div>
+              )}
 
               <div className="landing-page-card-text" key={`text${card.id}`}>
                 <div className="desktop-title" key={`desktop${card.id}`}>
@@ -66,31 +104,33 @@ const LandingPageCard = () => {
                     className="landing-page-card-title"
                     key={`cardTitle${card.id}`}
                   >
-                    {card.frontmatter.title}
+                    {card.title}
                   </h2>
                 </div>
-                <div
-                  className="landing-page-card-body"
-                  dangerouslySetInnerHTML={{ __html: card.html }}
-                  key={`body${card.id}`}
-                />
+                <div className="landing-page-card-body" key={`body${card.id}`}>
+                  <p>{card.body.body}</p>
+                </div>
 
                 <div
                   className="landing-page-card-button"
                   key={`button${card.id}`}
                 >
-                  <Link to={card.frontmatter.slug} key={`link${card.id}`}>
-                    <Button
-                      as={motion.button}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      size="lg"
-                      variant="custom"
-                      key={`btn${card.id}`}
-                    >
-                      {card.frontmatter.button}
-                    </Button>
-                  </Link>
+                  {card.buttonData ? (
+                    <Link to={card.buttonData[1]} key={`link${card.id}`}>
+                      <Button
+                        as={motion.button}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        size="lg"
+                        variant="custom"
+                        key={`btn${card.id}`}
+                      >
+                        {card.buttonData[0]}
+                      </Button>
+                    </Link>
+                  ) : (
+                    <div />
+                  )}
                 </div>
               </div>
             </Container>
